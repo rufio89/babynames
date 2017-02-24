@@ -1,0 +1,24 @@
+Gender:
+<select (change)="onChange($event.target.value)" id="baby-select">
+  <option *ngFor="let g of genders" value= {{g.id}}>
+    {{g.gender}}
+  </option>
+</select>
+
+
+<form novalidate [formGroup]="myGroup">
+  <p>
+    Min Name Length: <input type="text" formControlName="minNameLength">
+  </p>
+  <p>
+    Max Name Length: <input type="text" formControlName="maxNameLength">
+  </p>
+  <p>
+    Order of Model: <input type="text" formControlName="modelOrder">
+  </p>
+  <p>
+    Number of Names: <input type="text" formControlName="nameNumber">
+  </p>
+</form>
+<button (click)="onSubmit()">Submit</button>
+{{newData}}
