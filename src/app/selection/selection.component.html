@@ -1,24 +1,44 @@
-Gender:
-<select (change)="onChange($event.target.value)" id="baby-select">
-  <option *ngFor="let g of genders" value= {{g.id}}>
-    {{g.gender}}
-  </option>
-</select>
-
-
 <form novalidate [formGroup]="myGroup">
-  <p>
-    Min Name Length: <input type="text" formControlName="minNameLength">
+  Gender:
+  <select (change)="onChange($event.target.value)" class="form-item" id="baby-select">
+    <option *ngFor="let g of genders" value= {{g.id}}>
+      {{g.gender}}
+    </option>
+  </select>
+  <p class="form-item">
+    Min Name Length: <input type="text" [(ngModel)]="minLength" formControlName="minNameLength">
   </p>
-  <p>
-    Max Name Length: <input type="text" formControlName="maxNameLength">
+  <!--<div class="input-result">{{minLength}}</div>-->
+  <p class="form-item">
+    Max Name Length: <input type="text" [(ngModel)]="maxLength" formControlName="maxNameLength">
   </p>
+  <!--<div class="input-result">{{maxLength}}</div>-->
   <p>
-    Order of Model: <input type="text" formControlName="modelOrder">
+    Order of Model: <input type="text" [(ngModel)]="modelOrder" formControlName="modelOrder">
   </p>
-  <p>
-    Number of Names: <input type="text" formControlName="nameNumber">
+  <p class="form-item">
+    Number of Names: <input type="text" [(ngModel)]="nameNumber" formControlName="nameNumber">
   </p>
+  <!--<div class="input-result"> {{nameNumber}}</div>-->
 </form>
 <button (click)="onSubmit()">Submit</button>
-{{newData}}
+
+
+<div *ngFor="let name of newNames; let i = index">
+  <div *ngIf="currentGender==0">
+    <div class="square">
+      {{name}}
+      <br/>
+      <i class="fa fa-male" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div *ngIf="currentGender==1">
+    <div class="square">
+      {{name}}
+      <br/>
+      <i class="fa fa-female" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+
+

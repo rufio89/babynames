@@ -1,5 +1,35 @@
-#baby-select{
-  width:150px;
-  height:25px;
-
+.form-item{
 }
+
+.input-result{
+  color: #9b4dca;
+  height:20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.square{
+  height:250px;
+  width:32%;
+  float:left;
+  margin: .6%;
+  background-color:#ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.fa-male, .fa-female{
+
+  font-size: 3em;
+  top: calc(50% - 40px);
+  position: relative;
+}
+
+.fa-male{
+  color: #464bca;
+}
+
+.fa-female{
+  color: #9b4dca;
+}
+

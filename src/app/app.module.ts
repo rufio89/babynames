@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SelectionComponent } from './selection/selection.component';
+import {NamesService} from "./names.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { SelectionComponent } from './selection/selection.component';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [NamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
